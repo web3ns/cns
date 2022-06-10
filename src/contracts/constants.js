@@ -1,4 +1,4 @@
-export { abi as ETHRegistrarControllerJSONABI } from '@ensdomains/ens-contracts/artifacts/contracts/EthRegistrar/ETHRegistrarController.sol/ETHRegistrarController.json'
+export { abi as ETHRegistrarControllerJSONABI } from '@ensdomains/ens-contracts/artifacts/contracts/ethregistrar/ETHRegistrarController.sol/ETHRegistrarController.json'
 
 export const CONTRACT_ADDRESSES = {
   REGISTRY: '0x78380Dfd5ECf9c5202a3d5549F6B1Fb4D076fA02',
