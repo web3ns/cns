@@ -1,0 +1,13 @@
+{
+  "header": {
+    "homepage": "Homepage",
+    "search": "Search",
+    "nomatch": "No Match",
+    "logo": "LOGO"
+  },
+  "homepage": {
+    "search": "Search",
+    "placeholder": "Search name or addresses",
+    "app": "Go to App"
+  }
+}

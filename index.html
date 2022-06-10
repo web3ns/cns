@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNS</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import punycode from 'punycode'
+      import process from 'process'
+      import { Buffer } from 'buffer'
+      import EventEmitter from 'events'
+
+      window.punycode = punycode
+      window.Buffer = Buffer
+      window.process = process
+      window.EventEmitter = EventEmitter
+    </script>
+    <script type="module" src="/src/index.jsx"></script>
+  </body>
+</html>

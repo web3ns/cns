@@ -1,0 +1,13 @@
+{
+  "header": {
+    "homepage": "首页",
+    "search": "搜索",
+    "nomatch": "无匹配",
+    "logo": "LOGO"
+  },
+  "homepage": {
+    "search": "搜索",
+    "placeholder": "搜索名字或地址",
+    "app": "跳转至 App"
+  }
+}
