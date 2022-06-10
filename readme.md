@@ -1,1 +1,1 @@
-CNS project
+Conflux Name Service
