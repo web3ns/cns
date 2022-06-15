@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { RPC, CHAIN_ID } from '../constant'
+import { RPC, CHAIN_ID } from '../constants'
 import { getProvider } from '..'
 
 export function useProvider() {

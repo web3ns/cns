@@ -13,11 +13,15 @@
       import process from 'process'
       import { Buffer } from 'buffer'
       import EventEmitter from 'events'
+      import dayjs from 'dayjs'
+      import { ethers } from 'ethers'
 
       window.punycode = punycode
       window.Buffer = Buffer
       window.process = process
       window.EventEmitter = EventEmitter
+      window.dayjs = dayjs
+      window.ethers = ethers
     </script>
     <script type="module" src="/src/index.jsx"></script>
   </body>

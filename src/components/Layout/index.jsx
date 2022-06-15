@@ -1,5 +1,6 @@
-import React from 'react'
-import { Outlet, useLocation } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { useProvider } from '../../utils/hooks/useProvider'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -7,6 +8,33 @@ import Validator from './Validator'
 
 export default () => {
   const { pathname } = useLocation()
+  const navigate = useNavigate()
+  const { provider } = useProvider()
+
+  useEffect(() => {
+    const event = function (chainId) {
+      if (parseInt(chainId) !== 71) {
+        navigate('/network-error')
+      }
+    }
+    window.ethereum.on('chainChanged', event)
+
+    return () => {
+      ethereum.removeListener('accountsChanged', event)
+    }
+  }, [])
+
+  useEffect(() => {
+    const main = async () => {
+      const chainId = (await provider.getNetwork()).chainId
+
+      if (chainId !== 71) {
+        navigate('/network-error')
+      }
+    }
+
+    main().catch(console.log)
+  }, [])
 
   if (pathname === '/') {
     return (

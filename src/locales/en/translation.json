@@ -9,5 +9,20 @@
     "search": "Search",
     "placeholder": "Search name or addresses",
     "app": "Go to App"
+  },
+  "register": {
+    "step0": {
+      "title": "Request to register",
+      "desc": "Your wallet will open and you will be asked to confirm the first of two transactions required for registration. If the second transaction is not processed within 7 days of the first, you will need to start again from step 1."
+    },
+    "step1": {
+      "title": "Wait for 1 minute",
+      "desc": "The waiting period is required to ensure another person hasn’t tried to register the same name and protect you after your request.",
+      "left": "Left: "
+    },
+    "step2": {
+      "title": "Complete Registration",
+      "desc": "Click ‘register’ and your wallet will re-open. Only after the 2nd transaction is confirmed you'll know if you got the name."
+    }
   }
 }

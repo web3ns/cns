@@ -34,14 +34,16 @@ export const isSubdomain = name => {
 }
 
 export const getProvider = () => {
-  return new ethers.providers.JsonRpcBatchProvider({
-    url: RPC,
-    allowGzip: true,
-  })
+  // return new ethers.providers.JsonRpcBatchProvider({
+  //   url: RPC,
+  //   allowGzip: true,
+  // })
+  return new ethers.providers.Web3Provider(window.ethereum)
 }
 
 export const getContract = name => {
   const provider = getProvider()
+  const signer = provider.getSigner()
 
   let address = ''
   let abi = ''
@@ -54,7 +56,7 @@ export const getContract = name => {
   const contract = new ethers.Contract(
     address,
     ETHRegistrarControllerJSONABI,
-    provider,
+    signer,
   )
 
   return {
@@ -68,33 +70,34 @@ export const getContract = name => {
 export const checkName = async (name = '') => {
   if (name) {
     // TODO should check by contract, or get limit by contract
-    if (name.length > 3) {
-      if (!isSubdomain(name)) {
-        const { contract } = getContract('ETHRegistrarController')
-        if (await contract.valid(name)) {
-          return {
-            valid: true,
-            error: '',
-          }
-        } else {
-          return {
-            valid: false,
-            error: 'invalid name, check by ETHRegistrarController',
-          }
+    // if (name.length > 3) {
+    if (!isSubdomain(name)) {
+      const { contract } = getContract('ETHRegistrarController')
+      if (await contract.valid(name)) {
+        return {
+          valid: true,
+          error: '',
         }
       } else {
-        // for example: abc.eth or abc.com
         return {
           valid: false,
-          error: 'not support subdomain',
+          error:
+            'invalid name, name length less than 3, check by ETHRegistrarController',
         }
       }
     } else {
+      // for example: abc.eth or abc.com
       return {
         valid: false,
-        error: 'name length less than 3',
+        error: 'not support subdomain',
       }
     }
+    // } else {
+    //   return {
+    //     valid: false,
+    //     error: 'name length less than 3',
+    //   }
+    // }
   } else {
     return {
       valid: false,

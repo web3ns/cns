@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { Input, Select, Button } from 'antd'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
 import { SearchOutlined } from '@ant-design/icons'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { getName } from '../../utils'
 
 const { Option } = Select

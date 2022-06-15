@@ -8,14 +8,18 @@ import 'antd/dist/antd.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './locales/i18n'
 import { HelmetProvider } from 'react-helmet-async'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
 
 import Layout from './components/Layout'
 import NoMatch from './components/NoMatch'
+import NetworkError from './components/NetworkError'
 import Homepage from './pages/Homepage'
 import Search from './pages/Search'
 import { Register, Detail, Subdomain } from './pages/Name'
 
 moment.locale('zh-cn')
+dayjs.extend(utc)
 
 function App() {
   return (
@@ -32,6 +36,7 @@ function App() {
               <Route path="no-match" element={<NoMatch />} />
               <Route path="*" element={<NoMatch />} />
             </Route>
+            <Route path="/network-error" element={<NetworkError />} />
           </Routes>
         </ConfigProvider>
       </HelmetProvider>
