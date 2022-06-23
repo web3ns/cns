@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useContract } from '../../../utils/hooks/useContract'
+import useContract from '../../../utils/hooks/useContract'
 import { ONE_YEAR_SECONDS } from '../../../utils/constants'
 import { InputNumber } from 'antd'
 import { ethers } from 'ethers'

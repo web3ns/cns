@@ -6,8 +6,7 @@
 import React, { useEffect, useState, useMemo } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { useContract } from '../../../utils/hooks/useContract'
-import { useProvider } from '../../../utils/hooks/useProvider'
+import useContract from '../../../utils/hooks/useContract'
 import { ethers } from 'ethers'
 import { getName } from '../../../utils'
 import { Year } from './Year'
@@ -15,6 +14,7 @@ import dayjs from 'dayjs'
 import { ONE_YEAR_SECONDS } from '../../../utils/constants'
 import { Steps, Button } from 'antd'
 import { useTranslation } from 'react-i18next'
+import { useWallet } from '../../../utils/hooks'
 
 const { Step } = Steps
 
@@ -39,8 +39,8 @@ const getStage = k => {
 
 export const Register = () => {
   const { domain } = useParams()
+  const { provider } = useWallet()
   const { contract } = useContract('ETHRegistrarController')
-  const { provider } = useProvider()
   const navigate = useNavigate()
   const { t, i18n } = useTranslation()
 

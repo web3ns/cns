@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { Input, Select, Button } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { SearchOutlined } from '@ant-design/icons'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { getName } from '../../utils'
+import { ConnectButton } from '../ConnectWallet'
 
 const { Option } = Select
 
@@ -44,9 +45,16 @@ export default ({ size = 'middle' }) => {
         <Option value="zh-CN">中文</Option>
         <Option value="en">English</Option>
       </Select>
-      <Button type="primary" onClick={onSearch} disabled={disabled} size={size}>
-        {t('homepage.search')}
-      </Button>
+      <ConnectButton size={size}>
+        <Button
+          type="primary"
+          onClick={onSearch}
+          disabled={disabled}
+          size={size}
+        >
+          {t('homepage.search')}
+        </Button>
+      </ConnectButton>
     </Input.Group>
   )
 }

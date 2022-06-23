@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { getName } from '../../utils'
-import { useCheckName } from '../../utils/hooks/useCheckName'
+import { useCheckName } from '../../utils/hooks'
 
 export default ({ children }) => {
   const { name: paramName, domain } = useParams()

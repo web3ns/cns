@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { useContract } from '../../utils/hooks/useContract'
+import useContract from '../../utils/hooks/useContract'
 
 export default () => {
   let { name } = useParams()

@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useTranslation } from 'react-i18next'
-import { useNavigate, Link } from 'react-router-dom'
 import SearchInput from '../../components/SearchInput'
 
 export default () => {

@@ -13,7 +13,6 @@ import utc from 'dayjs/plugin/utc'
 
 import Layout from './components/Layout'
 import NoMatch from './components/NoMatch'
-import NetworkError from './components/NetworkError'
 import Homepage from './pages/Homepage'
 import Search from './pages/Search'
 import { Register, Detail, Subdomain } from './pages/Name'
@@ -36,7 +35,6 @@ function App() {
               <Route path="no-match" element={<NoMatch />} />
               <Route path="*" element={<NoMatch />} />
             </Route>
-            <Route path="/network-error" element={<NetworkError />} />
           </Routes>
         </ConfigProvider>
       </HelmetProvider>
